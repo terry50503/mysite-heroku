@@ -5,13 +5,14 @@
 {% block main %}
 	<hr>
 	<table class="table table-striped">
-		{% for post in posts %}
+		
 		<tr>
 			<td width="5%">編號</td><td>新聞標題</td><td>刊登日期</td>
 			{% if request.user.is_superuser %}
 			<td width="10%">管理</td>
 			{%endif%}
 		</tr>
+		{% for post in posts %}
 			<tr>
 				<td>{{ post.id }}</td>
 				{% if request.user.is_authenticated %}
